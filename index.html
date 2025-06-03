@@ -5,57 +5,65 @@
   <title>Barışalım mı?</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 100px;
-      background-color: #ffe6e6;
+      background-color: #fef6f6;
     }
 
     h1 {
-      font-size: 3em;
-      color: #d6336c;
+      font-size: 2.5em;
+      color: #ff4d4d;
     }
 
-    .btn {
+    #buttons {
+      margin-top: 40px;
+    }
+
+    button {
+      font-size: 1.2em;
       padding: 15px 30px;
-      font-size: 18px;
       margin: 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    .yes {
-      background-color: #28a745;
+    #yesBtn {
+      background-color: #4CAF50;
       color: white;
     }
 
-    .no {
-      background-color: #dc3545;
+    #noBtn {
+      background-color: #f44336;
       color: white;
       position: absolute;
-    }
-
-    .hidden {
-      display: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>Barışalım mı? 💔</h1>
+  <h1>Barışalım mı? 🕊️</h1>
 
-  <button class="btn yes" onclick="document.querySelector('h1').innerText = 'Ben de seni çok özledim! 💖'">Evet, barışalım 😊</button>
-  <button class="btn no" id="noBtn">Hayır 😢</button>
+  <div id="buttons">
+    <button id="yesBtn">Evet</button>
+    <button id="noBtn">Hayır</button>
+  </div>
 
   <script>
-    const noBtn = document.getElementById('noBtn');
-    noBtn.addEventListener('mouseover', () => {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 100);
-      noBtn.style.left = ${x}px;
-      noBtn.style.top = ${y}px;
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const i = Math.floor(Math.random() * (window.innerWidth - 100));
+      const j = Math.floor(Math.random() * (window.innerHeight - 100));
+      noBtn.style.left = i + "px";
+      noBtn.style.top = j + "px";
+    });
+
+    yesBtn.addEventListener("click", () => {
+      alert("Yaa çok sevindim! ❤️");
     });
   </script>
 
